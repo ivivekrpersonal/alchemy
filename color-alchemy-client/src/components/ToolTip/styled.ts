@@ -17,7 +17,7 @@ export const ToolTipContent = styled.div`
   line-height: 1;
   z-index: 100;
   white-space: nowrap;
-  bottom: calc(10px * -1);
+  bottom: calc(20px * -1);
   &:before {
     content: ' ';
     left: 50%;
