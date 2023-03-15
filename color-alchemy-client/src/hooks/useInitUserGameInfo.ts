@@ -9,7 +9,8 @@ const getApiUrl = (userId?: string) => {
 
 export const useInitUserGameInfo = () => {
   const [userGameInfo, setUserGameInfo] = React.useState<UserGameInfo>({} as UserGameInfo)
-  const [gameInitStatus, setGameInitStatus] = React.useState<UseInitUserGameInfo["gameInitStatus"]>('idle')
+  const [gameInitStatus, setGameInitStatus] =
+    React.useState<UseInitUserGameInfo['gameInitStatus']>('idle')
   const [movesLeft, setMovesLeft] = React.useState<number>(-1)
   const decrementMovesLeft = React.useCallback(() => setMovesLeft((moves) => moves - 1), [])
   const fetchUserGameInfo = React.useCallback(async (userId?: string) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-// import './styles.css'
+
 import { ToolTipContent, ToolTipWrapper } from './styled'
 export const ToolTip = ({
   children,
@@ -19,11 +19,7 @@ export const ToolTip = ({
   return (
     <ToolTipWrapper onMouseEnter={showTip} onMouseLeave={hideTip}>
       {children}
-      {active && (
-        <ToolTipContent>
-          {content}
-        </ToolTipContent>
-      )}
+      {active && <ToolTipContent>{content}</ToolTipContent>}
     </ToolTipWrapper>
   )
 }

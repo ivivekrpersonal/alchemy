@@ -1,6 +1,6 @@
 import { BoardTileData } from '../components/BoardTile/types'
 
-export const COLORS: Record<string, BoardTileData["color"]> = {
+export const COLORS: Record<string, BoardTileData['color']> = {
   black: [0, 0, 0],
   red: [255, 0, 0],
   blue: [0, 255, 0],
@@ -12,7 +12,8 @@ export const COLORS: Record<string, BoardTileData["color"]> = {
  * @param param0 Color of a tile
  * @returns boolean
  */
-export const isBlack = ([r, g, b]: BoardTileData["color"] = COLORS.black) => r === 0 && g === 0 && b === 0
+export const isBlack = ([r, g, b]: BoardTileData['color'] = COLORS.black) =>
+  r === 0 && g === 0 && b === 0
 
 /**
  *
@@ -33,10 +34,10 @@ export const calculateColor = (dimension: number, distance: number) => (value: n
  * @returns
  */
 export const getTileColor = (
-  sourceColor: BoardTileData["color"],
+  sourceColor: BoardTileData['color'],
   dimension: number,
   distance: number
-): BoardTileData["color"] => {
+): BoardTileData['color'] => {
   const [r, g, b] = sourceColor
   const colorFn = calculateColor(dimension, distance)
   return [colorFn(r), colorFn(g), colorFn(b)]
@@ -48,7 +49,10 @@ export const getTileColor = (
  * @param targetColor Target Color to calculate delta
  * @returns
  */
-export const calculateColorDelta = (color: BoardTileData["color"], targetColor: BoardTileData["color"]) => {
+export const calculateColorDelta = (
+  color: BoardTileData['color'],
+  targetColor: BoardTileData['color']
+) => {
   const [r1, g1, b1] = targetColor
   const [r2, g2, b2] = color
   return (
@@ -146,7 +150,7 @@ export const initBoardData = (width: number, height: number): BoardTileData[][] 
 }
 
 /**
- * 
+ *
  * @param param0 leftSourceColor, rightSourceColor, topSourceColor, bottomSourceColor
  * @returns Normalized color value
  */
@@ -155,7 +159,7 @@ export const calculateNormalizedColor = ({
   rightSourceColor,
   topSourceColor,
   bottomSourceColor,
-}: Record<string, BoardTileData["color"]>): BoardTileData["color"] => {
+}: Record<string, BoardTileData['color']>): BoardTileData['color'] => {
   const rColor = leftSourceColor[0] + rightSourceColor[0] + topSourceColor[0] + bottomSourceColor[0]
   const gColor = leftSourceColor[1] + rightSourceColor[1] + topSourceColor[1] + bottomSourceColor[1]
   const bColor = leftSourceColor[2] + rightSourceColor[2] + topSourceColor[2] + bottomSourceColor[2]
@@ -168,12 +172,15 @@ export const calculateNormalizedColor = ({
 }
 
 /**
- * 
- * @param target 
- * @param boardData 
+ *
+ * @param target
+ * @param boardData
  * @returns Tile with closest color as compared to target
  */
-export const findClosestColorTile = (target: BoardTileData["color"], boardData: BoardTileData[][]) => {
+export const findClosestColorTile = (
+  target: BoardTileData['color'],
+  boardData: BoardTileData[][]
+) => {
   let leastDelta = 1
   let tile: BoardTileData = {
     position: [0, 0],

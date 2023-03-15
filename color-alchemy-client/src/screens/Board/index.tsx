@@ -7,7 +7,7 @@ import { BoardContainer, BoardRow } from './styled'
 
 export const Board: React.FunctionComponent<BoardProps> = ({ onMovePlayed, data: boardData }) => {
   const [draggedColor, setDraggedColor] = React.useState<BoardTileData>()
-  const [sourceColors, setSourceColors] = React.useState<BoardTileData["color"][]>([
+  const [sourceColors, setSourceColors] = React.useState<BoardTileData['color'][]>([
     COLORS.red,
     COLORS.green,
     COLORS.blue,

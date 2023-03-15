@@ -49,7 +49,7 @@ const App: React.FunctionComponent = () => {
 
   return (
     <AppContainer>
-      <GlobalStyle/>
+      <GlobalStyle />
       <GameInfo
         userId={userId}
         target={target}
