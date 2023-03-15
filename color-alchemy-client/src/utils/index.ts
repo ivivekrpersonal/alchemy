@@ -145,6 +145,11 @@ export const initBoardData = (width: number, height: number): BoardTileData[][] 
   return data
 }
 
+/**
+ * 
+ * @param param0 leftSourceColor, rightSourceColor, topSourceColor, bottomSourceColor
+ * @returns Normalized color value
+ */
 export const calculateNormalizedColor = ({
   leftSourceColor,
   rightSourceColor,
@@ -162,6 +167,12 @@ export const calculateNormalizedColor = ({
   ]
 }
 
+/**
+ * 
+ * @param target 
+ * @param boardData 
+ * @returns Tile with closest color as compared to target
+ */
 export const findClosestColorTile = (target: BoardTileData["color"], boardData: BoardTileData[][]) => {
   let leastDelta = 1
   let tile: BoardTileData = {
